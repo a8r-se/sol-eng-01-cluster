@@ -1,0 +1,106 @@
+---
+apiVersion: getambassador.io/v2
+kind: Host
+metadata:
+  name: emojivoto-dev.se01.mturner.k736.net     # Edit this to reflect proper host registered with DNS
+  namespace: ambassador
+spec:
+  hostname: "emojivoto-dev.se01.mturner.k736.net"  # host name should be registered with DNS before deploying. Edit this to reflect proper host registered with DNS
+  acmeProvider:
+    authority: https://acme-v02.api.letsencrypt.org/directory
+    email: matt@datawire.io
+  requestPolicy:
+    insecure:
+      action: Redirect
+      additionalPort: 8080
+---
+apiVersion: getambassador.io/v2
+kind: Host
+metadata:
+  name: emojivoto.se01.mturner.k736.net       # Edit this to reflect proper host registered with DNS
+  namespace: ambassador
+spec:
+  hostname: "emojivoto.se01.mturner.k736.net"  # host name should be registered with DNS before deploying. Edit this to reflect proper host registered with DNS
+  acmeProvider:
+    authority: https://acme-v02.api.letsencrypt.org/directory
+    email: matt@datawire.io     # Edit this to reflect proper value
+  requestPolicy:
+    insecure:
+      action: Redirect
+      additionalPort: 8080
+---
+apiVersion: getambassador.io/v2
+kind: Host
+metadata:
+  name: monitoring.se01.mturner.k736.net       # Edit this to reflect proper host registered with DNS
+  namespace: ambassador
+spec:
+  hostname: "monitoring.se01.mturner.k736.net"  # host name should be registered with DNS before deploying. Edit this to reflect proper host registered with DNS
+  acmeProvider:
+    authority: https://acme-v02.api.letsencrypt.org/directory
+    email: matt@datawire.io
+  requestPolicy:
+    insecure:
+      action: Redirect
+      additionalPort: 8080
+---
+apiVersion: getambassador.io/v2
+kind: Host
+metadata:
+  name: argocd.se01.mturner.k736.net      # Edit this to reflect proper host registered with DNS
+  namespace: ambassador
+spec:
+  hostname: "argocd.se01.mturner.k736.net"  # host name should be registered with DNS before deploying. Edit this to reflect proper host registered with DNS
+  acmeProvider:
+    authority: https://acme-v02.api.letsencrypt.org/directory
+    email: matt@datawire.io
+  requestPolicy:
+    insecure:
+      action: Redirect
+      additionalPort: 8080
+---
+apiVersion: getambassador.io/v2
+kind: Host
+metadata:
+  name: boutique-dev.se01.mturner.k736.net    # Edit this to reflect proper host registered with DNS
+  namespace: ambassador
+spec:
+  hostname: "boutique-dev.se01.mturner.k736.net"  # host name should be registered with DNS before deploying. Edit this to reflect proper host registered with DNS
+  acmeProvider:
+    authority: https://acme-v02.api.letsencrypt.org/directory
+    email: matt@datawire.io
+  requestPolicy:
+    insecure:
+      action: Redirect
+      additionalPort: 8080
+---
+apiVersion: getambassador.io/v2
+kind: Host
+metadata:
+  name: boutique.se01.mturner.k736.net       # Edit this to reflect proper host registered with DNS
+  namespace: ambassador
+spec:
+  hostname: "boutique.se01.mturner.k736.net "  # host name should be registered with DNS before deploying. Edit this to reflect proper host registered with DNS
+  acmeProvider:
+    authority: https://acme-v02.api.letsencrypt.org/directory
+    email: matt@datawire.io
+  requestPolicy:
+    insecure:
+      action: Redirect
+      additionalPort: 8080
+---
+apiVersion: getambassador.io/v2
+kind: Host
+metadata:
+  name: se01.mturner.k736.net       # Edit this to reflect proper host registered with DNS
+  namespace: ambassador
+spec:
+  hostname: "se01.mturner.k736.net"  # host name should be registered with DNS before deploying. Edit this to reflect proper host registered with DNS
+  acmeProvider:
+    authority: https://acme-v02.api.letsencrypt.org/directory
+    email: matt@datawire.io
+  requestPolicy:
+    insecure:
+      action: Redirect
+      additionalPort: 8080
+---

@@ -33,6 +33,7 @@ monitoring
 ~~~
 
 **Hosts**
+~~~
 NAMESPACE    NAME                                 HOSTNAME                             STATE
 ambassador   emojivoto-dev.se1.mturner.k736.net   emojivoto-dev.se1.mturner.k736.net   Ready 
 ambassador   emojivoto.se1.mturner.k736.net       emojivoto.se1.mturner.k736.net       Ready
@@ -41,10 +42,11 @@ ambassador   argocd.se1.mturner.k736.net          argocd.se1.mturner.k736.net   
 ambassador   boutique-dev.se1.mturner.k736.net    boutique-dev.se1.mturner.k736.net    Ready
 ambassador   boutique.se1.mturner.k736.net        boutique.se1.mturner.k736.net        Ready
 ambassador   se1.mturner.k736.net                 se1.mturner.k736.net                 Ready
-
+~~~
 
 
 **Mappings**
+~~~
 NAMESPACE    NAME                          SOURCE HOST                      SOURCE PREFIX                               DEST SERVICE                         
 emojivoto    emojivoto-mapping             emojivoto.se1.mturner.k736.net   /                                           web-svc.emojivoto:80                       
 argocd       argocd-server                 argocd.se1.mturner.k736.net      /                                           https://argocd-server.argocd:443           
@@ -58,12 +60,12 @@ ambassador   ambassador-devportal                                           /doc
 ambassador   ambassador-devportal-assets                                    /documentation/(assets|styles)/(.*)(.css)   127.0.0.1:8500                             
 ambassador   ambassador-devportal-demo                                      /docs/                                      127.0.0.1:8500                             
 ambassador   ambassador-devportal-api                                       /openapi/                                   127.0.0.1:8500                             
-
+~~~
 
 
 
 **Deployments**
-
+~~~
 NAMESPACE      NAME                   CONTAINERS              IMAGES                                             SELECTOR
 test           hello                  hello                   docker.io/datawire/hello-world:latest              app=hello
 monitoring     prometheus-operator    prometheus-operator     quay.io/coreos/prometheus-operator:v0.41.0 app.kubernetes.io/component=controller,app.kubernetes.io/name=prometheus-operator  
@@ -104,9 +106,10 @@ ambassador     ambassador              ambassador             docker.io/datawire
 monitoring     otel-collector          otel-collector         otel/opentelemetry-collector-contrib:0.11.0       app=opentelemetry,component=otel-collector
 boutique       adservice               server                 agervais/adservice:v0.3.1                         app=adservice
 boutique       cartservice             server                 agervais/cartservice:v0.3.1                       app=cartservice
+~~~
 
 **Service**
-
+~~~
 NAMESPACE       NAME                        TYPE           CLUSTER-IP      EXTERNAL-IP     PORT(S)                                           SELECTOR
 default         kubernetes                  ClusterIP      10.43.0.1       <none>          443/TCP                                           <none>
 kube-system     kube-dns                    ClusterIP      10.43.0.10      <none>          53/UDP,53/TCP,9153/TCP                            k8s-app=kube-dns
@@ -166,3 +169,4 @@ ambassador      ambassador-admin            ClusterIP      10.43.75.80     <none
 ambassador      ambassador-redis            ClusterIP      10.43.114.156   <none>          6379/TCP                                              app.kubernetes.io/instance=ambassador,app.kubernetes.io/name=ambassador-redis
   
 ambassador      ambassador                  LoadBalancer   10.43.142.202   35.224.39.220   80:32623/TCP,443:31221/TCP                          app.kubernetes.io/instance=ambassador,app.kubernete
+~~~

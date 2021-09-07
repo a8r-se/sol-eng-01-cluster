@@ -2,6 +2,7 @@
 Ambassador Edge Stack is deployed via Helm 3
 
 **Resources**
+~~~
 Hostname:    sol-eng-01
 Capacity:
   cpu:                8
@@ -15,7 +16,7 @@ Allocatable:
   hugepages-2Mi:      0
   memory:             32888700Ki
   pods:               255
-
+~~~
 
 **Online Boutique and Telepresence**
 Please note that this cluster is leveraging ArgoCD and Argo Rollouts.
